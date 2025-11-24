@@ -116,17 +116,39 @@ export default {
             opacity: "1",
           },
         },
+        // ✅ ADICIONADO: Animação meteor
+        meteor: {
+          "0%": {
+            transform: "rotate(215deg) translateX(0)",
+            opacity: "1",
+          },
+          "70%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
       },
 
       animation: {
         "fade-in": "fade-in 0.3s ease-out",
         "slide-up": "slide-up 0.4s ease-out",
+        // ✅ ADICIONADO: Animação meteor
+        meteor: "meteor 5s linear infinite",
       },
 
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+
+      // ✅ ADICIONADO: Z-index negativo para posicionamento
+      zIndex: {
+        '-1': '-1',
+        '-10': '-10',
       },
     },
   },

@@ -1,4 +1,4 @@
-import { HandHelping, Users, Zap } from "lucide-react";
+import { Banknote, NotebookPen, Zap, MessageSquareWarning } from "lucide-react";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
 import React from "react";
 
@@ -25,19 +25,19 @@ const Hero = ({
   trustText = "Gestão Contábil confiável",
   features = [
     {
-      icon: <HandHelping className="h-auto w-5" />,
+      icon: <MessageSquareWarning className="h-auto w-5" />,
       title: "Relatórios Gerenciais",
       description:
         "Indicadores de desempenho fiscal, dashboards intuitivos e relatórios personalizados.",
     },
     {
-      icon: <Users className="h-auto w-5" />,
+      icon: <Banknote className="h-auto w-5" />,
       title: "Gestão Contábil",
       description:
         "Sistema contábil integrado que atende às normativas da STN e SICONFI, facilitando a prestação de contas aos tribunais",
     },
     {
-      icon: <Zap className="h-auto w-5" />,
+      icon: <NotebookPen className="h-auto w-5" />,
       title: "Planejamento Orçamentário",
       description:
         "Processo de elaboração, execução, controle de orçamento, previsão financeira detalhada de receitas, despesas e investimentos.",
@@ -77,20 +77,14 @@ const Hero = ({
           <div className="absolute -right-28 -top-28 -z-10 aspect-video h-72 w-96 opacity-40 [background-size:12px_12px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_20%,transparent_100%)] sm:bg-[radial-gradient(hsl(var(--muted-foreground))_1px,transparent_1px)]"></div>
           <div className="absolute -left-28 -top-28 -z-10 aspect-video h-72 w-96 opacity-40 [background-size:12px_12px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_20%,transparent_100%)] sm:bg-[radial-gradient(hsl(var(--muted-foreground))_1px,transparent_1px)]"></div>
         </div>
-        <div className="mx-auto mt-10 flex flex-col md:flex-row">
+        <div className="mx-auto mt-10 flex flex-col md:flex-row gap-4">
           {features.map((feature, index) => (
             <React.Fragment key={feature.title}>
-              {index > 0 && (
-                <Separator
-                  orientation="vertical"
-                  className="bg-linear-to-b from-muted to-muted mx-6 hidden h-auto w-[2px] via-transparent md:block"
-                />
-              )}
               <div
                 key={index}
                 className="bg-muted flex grow basis-0 flex-col rounded-md p-4"
               >
-                <div className="bg-background mb-6 flex size-10 items-center justify-center rounded-full drop-shadow-lg">
+                <div className="bg-background mb-6 flex size-10 items-center justify-center rounded-full drop-shadow-lg text-primary">
                   {feature.icon}
                 </div>
                 <h3 className="mb-2 font-semibold">{feature.title}</h3>

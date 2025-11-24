@@ -117,6 +117,9 @@ Fundo: #f9fafb;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+  .theme {
+    --animate-meteor-effect: meteor 5s linear infinite;
+  }
 }
 
 @layer base {
@@ -838,4 +841,27 @@ body {
       opacity: 0;
     }
   }
+  @keyframes meteor {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+    }
+  70% {
+    opacity: 1;
+    }
+  100% {
+    transform: rotate(215deg) translateX(-500px);
+    opacity: 0;
+    }
+  }
+}
+
+/* ====== ADDITIONAL CUSTOM STYLES ===== */
+
+.dashboard-section-background-light {
+  background-color: #FFFFFF;
+}
+
+.dashboard-section-background-dark {
+  background-color: #0F0E0E;
 }
