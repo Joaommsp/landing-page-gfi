@@ -1,68 +1,841 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* TEMA CLARO */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/*
+Fundo: #0a0a0a;
+*/
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* TEMA ESCURO */
+
+/*
+Fundo: #f9fafb;
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ========== TEMA CLARO (Light Mode) ========== */
+  :root {
+    /* Cores principais */
+    --background: 0 0% 100%; /* Branco puro */
+    --foreground: 222.2 84% 4.9%; /* Preto azulado (texto) */
+
+    /* Cards */
+    --card: 0 0% 100%; /* Branco */
+    --card-foreground: 222.2 84% 4.9%; /* Preto azulado */
+
+    /* Popover/Dropdowns */
+    --popover: 0 0% 100%; /* Branco */
+    --popover-foreground: 222.2 84% 4.9%; /* Preto azulado */
+
+    /* Primárias */
+    --primary: 222.2 84% 4.9%; /* Cinza escuro */
+    --primary-foreground: 210 40% 98%; /* Branco azulado */
+
+    /* Secundárias */
+    --secondary: 210 40% 96.1%; /* Cinza muito claro */
+    --secondary-foreground: 222.2 84% 4.9%; /* Preto azulado */
+
+    /* Muted (elementos desabilitados/silenciados) */
+    --muted: 210 40% 96.1%; /* Cinza claro */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Cinza médio */
+
+    /* Accent (destaque) */
+    --accent: 210 40% 96.1%; /* Cinza claro */
+    --accent-foreground: 222.2 84% 4.9%; /* Preto azulado */
+
+    /* Destrutivo (erros/delete) */
+    --destructive: 0 84.2% 60.2%; /* Vermelho */
+    --destructive-foreground: 210 40% 98%; /* Branco */
+
+    /* Bordas e inputs */
+    --border: 214.3 31.8% 91.4%; /* Cinza claro */
+    --input: 214.3 31.8% 91.4%; /* Cinza claro */
+    --ring: 221.2 83.2% 53.3%; /* Azul (focus ring) */
+
+    /* Border radius global */
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* ========== TEMA ESCURO (Dark Mode) ========== */
+  .dark {
+    /* Cores principais - INVERTIDAS */
+    --background: 0, 3.4%, 5.7%; /* Preto azulado */
+    --foreground: 210 40% 98%; /* Branco azulado (texto) */
+
+    /* Cards */
+    --card: 222.2 84% 4.9%; /* Preto azulado */
+    --card-foreground: 210 40% 98%; /* Branco azulado */
+
+    /* Popover/Dropdowns */
+    --popover: 222.2 84% 4.9%; /* Preto azulado */
+    --popover-foreground: 210 40% 98%; /* Branco azulado */
+
+    /* Primárias */
+    --primary: 41.4, 89.6%, 77.5%; /* Branco azulado */
+    --primary-foreground: 222.2 84% 4.9%; /* Preto azulado */
+
+    /* Secundárias */
+    --secondary: 217.2 32.6% 17.5%; /* Cinza escuro */
+    --secondary-foreground: 210 40% 98%; /* Branco azulado */
+
+    /* Muted (elementos desabilitados/silenciados) */
+    --muted: 217.2 32.6% 17.5%; /* Cinza escuro */
+    --muted-foreground: 215 20.2% 65.1%; /* Cinza médio */
+
+    /* Accent (destaque) */
+    --accent: 217.2 32.6% 17.5%; /* Cinza escuro */
+    --accent-foreground: 210 40% 98%; /* Branco azulado */
+
+    /* Destrutivo (erros/delete) */
+    --destructive: 0 62.8% 30.6%; /* Vermelho escuro */
+    --destructive-foreground: 210 40% 98%; /* Branco */
+
+    /* Bordas e inputs */
+    --border: 217.2 32.6% 17.5%; /* Cinza escuro */
+    --input: 217.2 32.6% 17.5%; /* Cinza escuro */
+    --ring: 212.7 26.8% 83.9%; /* Azul claro (focus ring) */
+
+    /* Sidebar */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
-a:hover {
-  color: #535bf2;
+
+/* ===== RESET E BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #f9fafb;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
 }
 
-button {
+p {
+  margin-bottom: 1rem;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* ===== IMAGENS ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.img-rounded {
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* ===== CONTAINERS E LAYOUTS ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+/* ===== CARD SYSTEM ===== */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.btn-success {
+  background-color: #10b981;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* ===== FORMS ===== */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ===== UTILITIES ===== */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+.d-flex {
+  display: flex;
+}
+.d-grid {
+  display: grid;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+/* ===== SPACING ===== */
+.m-0 {
+  margin: 0;
+}
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-3 {
+  margin-top: 1rem;
+}
+.mt-4 {
+  margin-top: 1.5rem;
+}
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-3 {
+  margin-bottom: 1rem;
+}
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-3 {
+  padding: 1rem;
+}
+.p-4 {
+  padding: 1.5rem;
+}
+.p-5 {
+  padding: 3rem;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  a:hover {
-    color: #747bff;
+  to {
+    opacity: 1;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.5s ease-out;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ===== LOADING STATES ===== */
+.loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f4f6;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .main-content {
+    padding: 1rem 0;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
+/* ===== DARK MODE READY ===== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0a0a0a;
+    color: #f9fafb;
+  }
+
+  .card {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+
+  .form-control {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ===== FOCUS STATES ===== */
+.focus-visible:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ===== THEME VARIABLES SYSTEM ===== */
+:root {
+  /* Backgrounds - Tema Claro */
+  --bg-primary: #ffffff; /* Branco puro  */
+  --bg-secondary: #f9fafb; /* Cinza muito claro */
+  --bg-tertiary: #f3f4f6; /* Cinza claro */
+  --bg-reverse: #0a0a0a; /* Preto (inverso do tema escuro) */
+
+  /* Textos - Tema Claro */
+  --text-primary: #0f0e0e; /* Preto (texto principal) */
+  --text-secondary: #374151; /* Cinza escuro */
+  --text-muted: #6b7280; /* Cinza médio */
+
+  /* Bordas - Tema Claro */
+  --border-color: #e5e7eb; /* Cinza claro */
+  --border-light: #f3f4f6; /* Cinza muito claro */
+
+  /* Cards e Inputs - Tema Claro */
+  --card-bg: #ffffff; /* Branco puro */
+  --input-bg: #ffffff; /* Branco puro */
+
+  /* Sombras - Tema Claro (sutis) */
+  --shadow-sm: rgba(0, 0, 0, 0.05);
+  --shadow-md: rgba(0, 0, 0, 0.1);
+  --shadow-lg: rgba(0, 0, 0, 0.15);
+
+  /* Body */
+  --bg-body-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(209, 209, 209, 1) 100%
+  );
+}
+
+.dark {
+  /* Backgrounds - Tema Escuro */
+  --bg-primary: #0a0a0a; /* Preto profundo */
+  --bg-secondary: #0F0E0E; /* Preto suave */
+  --bg-tertiary: #0068f9; /* Cinza muito escuro */
+  --bg-reverse: #ffffff; /* Branco (inverso do tema claro) */
+
+  /* Textos - Tema Escuro */
+  --text-primary: #f9fafb; /* Branco (texto principal) */
+  --text-secondary: #d1d5db; /* Cinza claro */
+  --text-muted: #9ca3af; /* Cinza médio */
+
+  /* Bordas - Tema Escuro */
+  --border-color: #374151; /* Cinza escuro */
+  --border-light: #4b5563; /* Cinza médio-escuro */
+
+  /* Cards e Inputs - Tema Escuro */
+  --card-bg: #141414; /* Preto suave (cards destacam do bg) */
+  --input-bg: #1f2937; /* Cinza muito escuro */
+
+  /* Sombras - Tema Escuro (mais intensas) */
+  --shadow-sm: rgba(0, 0, 0, 0.3);
+  --shadow-md: rgba(0, 0, 0, 0.5);
+  --shadow-lg: rgba(0, 0, 0, 0.7);
+
+  /* Body */
+  --bg-body-gradient: linear-gradient(
+    180deg,
+    rgba(34, 37, 42, 1) 0%,
+    rgba(16, 18, 20, 1) 100%
+  );
+}
+
+/* ===== OVERRIDE EXISTING STYLES WITH THEME VARIABLES ===== */
+body {
+  background: var(--bg-body-gradient);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px var(--shadow-md);
+}
+
+.card-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-footer {
+  border-top: 1px solid var(--border-color);
+}
+
+.form-label {
+  color: var(--text-primary);
+}
+
+.form-control {
+  background-color: var(--input-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.form-control:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ===== NEW THEME UTILITY CLASSES ===== */
+.bg-theme-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-theme-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-theme-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.bg-reverse {
+  background-color: var(--bg-reverse);
+}
+
+.text-theme-primary {
+  color: var(--text-primary);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+
+.text-theme-muted {
+  color: var(--text-muted);
+}
+
+.border-theme {
+  border-color: var(--border-color);
+}
+
+.border-theme-light {
+  border-color: var(--border-light);
+}
+
+.shadow-theme-sm {
+  box-shadow: 0 1px 2px var(--shadow-sm);
+}
+
+.shadow-theme-md {
+  box-shadow: 0 4px 6px var(--shadow-md);
+}
+
+.shadow-theme-lg {
+  box-shadow: 0 10px 15px var(--shadow-lg);
+}
+
+/* ===== DARK MODE SCROLLBAR ===== */
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* ===== SMOOTH TRANSITIONS FOR ALL ELEMENTS ===== */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== THEME-AWARE BUTTONS ===== */
+.btn {
+  transition: all 0.2s ease;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-ghost:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+/* ===== THEME TOGGLE BUTTON STYLES ===== */
+.theme-toggle {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}
+
+/* ===== NOTIFICATION STYLES FOR BOTH THEMES ===== */
+.notification {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px var(--shadow-lg);
+}
+
+/* ===== OVERRIDE DARK MODE MEDIA QUERY ===== */
+@media (prefers-color-scheme: dark) {
+  /* Remove auto dark mode - now controlled by .dark class */
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  .card {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+  }
+
+  .form-control {
+    background-color: var(--input-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+  }
+}
+
+/* ===== SPECIAL DARK MODE ELEMENTS ===== */
+.dark .spinner {
+  border-color: #374151;
+  border-top-color: #60a5fa;
+}
+
+.dark .focus-visible:focus {
+  outline-color: #60a5fa;
+}
+
+@theme inline {
+  --animate-move: move 5s linear infinite;
+
+  @keyframes move {
+    0% {
+      transform: translateX(-200px);
+    }
+    100% {
+      transform: translateX(200px);
+    }
+  }
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
   }
 }
