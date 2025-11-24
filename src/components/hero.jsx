@@ -69,7 +69,7 @@ const Hero = ({
             )}
           </div>
         </div>
-        <div className="relative mx-auto max-w-5xl">
+        <div className="relative mx-auto">
           <div className="h-[500px] bg-background rounded-xl flex items-center justify-center overflow-hidden w-full">
             <img src={getLogo()} alt="Logo" className="w-full max-w-[356px]" />
           </div>
