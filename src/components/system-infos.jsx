@@ -11,7 +11,10 @@ export default function SystemInfos() {
       <div className="mx-auto">
         <div className="relative">
           <div className="relative z-10 grid grid-cols-6 gap-3">
-            <Card className="relative col-span-full flex overflow-hidden lg:col-span-2">
+            <Card
+              data-usal="fade-u delay-0 duration-800 once"
+              className="relative col-span-full flex overflow-hidden lg:col-span-2"
+            >
               <CardContent className="relative m-auto size-fit pt-6">
                 <div className="relative flex h-24 w-56 items-center">
                   <svg
@@ -25,7 +28,10 @@ export default function SystemInfos() {
                       fill="currentColor"
                     />
                   </svg>
-                  <span className="mx-auto block w-fit text-5xl font-semibold">
+                  <span
+                    data-usal="count-[100] duration-1000"
+                    className="mx-auto block w-fit text-5xl font-semibold"
+                  >
                     100%
                   </span>
                 </div>
@@ -34,7 +40,10 @@ export default function SystemInfos() {
                 </h2>
               </CardContent>
             </Card>
-            <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2">
+            <Card
+              data-usal="fade-u delay-0 duration-1000 once"
+              className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2"
+            >
               <CardContent className="pt-6">
                 <div className="relative mx-auto flex aspect-square size-32 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:before:border-white/5">
                   <svg
@@ -99,7 +108,10 @@ export default function SystemInfos() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2">
+            <Card
+              data-usal="fade-u delay-0 duration-1100 once"
+              className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2"
+            >
               <CardContent className="pt-6">
                 <div className="pt-6 lg:px-6">
                   <svg
@@ -186,7 +198,10 @@ export default function SystemInfos() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="card variant-outlined relative col-span-full overflow-hidden lg:col-span-3">
+            <Card
+              data-usal="fade-u delay-0 duration-1100 once"
+              className="card variant-outlined relative col-span-full overflow-hidden lg:col-span-3"
+            >
               <CardContent className="grid pt-6 sm:grid-cols-2">
                 <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
                   <div className="relative flex aspect-square size-12 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:before:border-white/5">
@@ -252,7 +267,10 @@ export default function SystemInfos() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="card variant-outlined relative col-span-full overflow-hidden lg:col-span-3">
+            <Card
+              data-usal="fade-u delay-0 duration-1100 once"
+              className="card variant-outlined relative col-span-full overflow-hidden lg:col-span-3"
+            >
               <CardContent className="grid h-full pt-6 sm:grid-cols-2">
                 <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
                   <div className="relative flex aspect-square size-12 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:before:border-white/5">
@@ -275,7 +293,7 @@ export default function SystemInfos() {
                       <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
                         Secretário
                       </span>
-                      <div className="ring-background size-7 ring-4">
+                      <div className="size-7 ">
                         <img
                           className="size-full rounded-full"
                           src={user02}
@@ -284,7 +302,7 @@ export default function SystemInfos() {
                       </div>
                     </div>
                     <div className="relative ml-[calc(50%-1rem)] flex items-center gap-2">
-                      <div className="ring-background size-8 ring-4">
+                      <div className="size-8">
                         <img
                           className="size-full rounded-full"
                           src={user01}
@@ -299,7 +317,7 @@ export default function SystemInfos() {
                       <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
                         Contador
                       </span>
-                      <div className="ring-background size-7 ring-4">
+                      <div className="size-7">
                         <img
                           className="size-full rounded-full"
                           src={user03}

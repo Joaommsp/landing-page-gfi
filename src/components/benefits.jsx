@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 
 import benefitsImg_01 from "@/assets/img/section-benefits/benefits-01.png";
@@ -9,6 +11,12 @@ import logoDark from "@/assets/img/svg/logo-minimal-dark.svg";
 import logoLight from "@/assets/img/svg/logo-minimal-light.svg";
 
 import { CircleMinus, GitCompareArrows, Crosshair, Blocks } from "lucide-react";
+
+import { BorderBeam } from "./ui/border-beam";
+
+import { Lens } from "./ui/lens";
+
+import { BenefitsCards } from "./benefits-cards";
 
 const defaultCompanies = [
   {
@@ -81,6 +89,8 @@ const Benefits = ({
     return theme === "dark" ? logoLight : logoDark;
   };
 
+  const [hovering, setHovering] = useState(false);
+
   return (
     <section className="">
       <div className="container">
@@ -90,16 +100,21 @@ const Benefits = ({
         </div>
         <div className="grid gap-7 lg:grid-cols-3">
           <img
+            data-usal="fade-u delay-0 duration-800 once"
             src={mainImage.src}
             alt={mainImage.alt}
-            className="size-full max-h-[620px] rounded-xl object-cover lg:col-span-2"
+            className="size-full max-h-[820px] rounded-xl object-cover lg:col-span-2"
           />
+
           <div className="flex flex-col gap-7 md:flex-row lg:flex-col">
-            <div className="bg-muted flex flex-col justify-between gap-6 rounded-xl p-7 md:w-1/2 lg:w-auto">
+            <div
+              data-usal="zoomin delay-200 duration-1000 once"
+              className="bg-muted flex flex-col justify-between gap-6 rounded-xl p-7 md:w-1/2 lg:w-auto"
+            >
               <img
                 src={getLogo()}
                 alt={breakout.alt}
-                className="mr-auto h-10 "
+                className="mr-auto h-10"
               />
               <div>
                 <p className="mb-2 text-lg font-semibold">{breakout.title}</p>
@@ -111,11 +126,24 @@ const Benefits = ({
                 </a>
               </Button>
             </div>
-            <img
-              src={secondaryImage.src}
-              alt={secondaryImage.alt}
-              className="grow basis-0 rounded-xl object-cover md:w-1/2 lg:min-h-0 lg:w-auto"
-            />
+
+            <div
+              data-usal="flip-r delay-400 duration-1200 once"
+              className="grow md:w-1/2 lg:w-auto relative min-h-[400px]"
+            >
+              <Lens
+                hovering={hovering}
+                setHovering={setHovering}
+                className="w-full h-full"
+              >
+                <img
+                  src={secondaryImage.src}
+                  alt={secondaryImage.alt}
+                  className="w-full h-full rounded-xl object-cover"
+                  style={{ display: "block" }}
+                />
+              </Lens>
+            </div>
           </div>
         </div>
         {/* <div className="py-32">
@@ -132,7 +160,10 @@ const Benefits = ({
             ))}
           </div>
         </div> */}
-        <div className="bg-muted relative overflow-hidden rounded-xl p-7 md:p-16 mt-6">
+        <div
+          data-usal="fade-u once"
+          className="bg-muted relative overflow-hidden rounded-xl p-7 md:p-16 mt-6"
+        >
           <div className="flex flex-col gap-4 text-center md:text-left">
             <h2 className="text-3xl font-semibold md:text-4xl">
               {achievementsTitle}
@@ -141,17 +172,14 @@ const Benefits = ({
               {achievementsDescription}
             </p>
           </div>
-          <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 text-center lg:grid-cols-4">
-            {achievements.map((item, idx) => (
-              <div
-                className="flex flex-col justify-center items-center gap-2"
-                key={item.label + idx}
-              >
-                {item.icon}
-                <p className="text-sm md:text-base">{item.label}</p>
-              </div>
-            ))}
-          </div>
+          <BenefitsCards />
+          <BorderBeam
+            duration={12}
+            size={550}
+            colorFrom="#f4d58f"
+            colorTo="#4d4d4d"
+            delay={2}
+          />
         </div>
       </div>
     </section>

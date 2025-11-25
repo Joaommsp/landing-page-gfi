@@ -628,7 +628,7 @@ img {
   /* Body */
   --bg-body-gradient: linear-gradient(
     180deg,
-    rgba(34, 37, 42, 1) 0%,
+    rgb(33, 36, 41) 0%,
     rgba(16, 18, 20, 1) 100%
   );
 }

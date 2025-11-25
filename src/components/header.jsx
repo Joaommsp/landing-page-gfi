@@ -55,7 +55,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header
+    <header data-usal="fade-d duration-800"
       className={cn(
         "sticky top-0 z-50 w-full border-b transition-all duration-300",
         scrolled

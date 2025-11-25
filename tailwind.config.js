@@ -116,7 +116,6 @@ export default {
             opacity: "1",
           },
         },
-        // ✅ ADICIONADO: Animação meteor
         meteor: {
           "0%": {
             transform: "rotate(215deg) translateX(0)",
@@ -130,12 +129,17 @@ export default {
             opacity: "0",
           },
         },
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
       },
 
       animation: {
         "fade-in": "fade-in 0.3s ease-out",
         "slide-up": "slide-up 0.4s ease-out",
-        // ✅ ADICIONADO: Animação meteor
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         meteor: "meteor 5s linear infinite",
       },
 
@@ -147,8 +151,8 @@ export default {
 
       // ✅ ADICIONADO: Z-index negativo para posicionamento
       zIndex: {
-        '-1': '-1',
-        '-10': '-10',
+        "-1": "-1",
+        "-10": "-10",
       },
     },
   },

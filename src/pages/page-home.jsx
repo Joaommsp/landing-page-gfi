@@ -3,6 +3,8 @@ import { Hero } from "@/components/hero";
 import { Benefits } from "@/components/benefits";
 import DashBoard from "@/components/dashboard";
 import SystemInfos from "@/components/system-infos";
+import FeaturesSection02 from "@/components/features-section-02";
+import FeaturesSection01 from "@/components/features-section-01";
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
       <Benefits />
       <DashBoard />
       <SystemInfos />
+      <FeaturesSection01 />
+      <FeaturesSection02 />
     </div>
   );
 }
