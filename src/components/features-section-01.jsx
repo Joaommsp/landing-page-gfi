@@ -15,7 +15,7 @@ export default function FeaturesSection01() {
           Acesso de Qualquer Lugar.
         </h4>
 
-        <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
+        <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-muted-foreground text-center">
           Sistema 100% web responsivo com aplicativo mobile nativo. Acompanhe as
           finanças do município do escritório, em reuniões ou fiscalizações de
           campo com a mesma experiência fluida.

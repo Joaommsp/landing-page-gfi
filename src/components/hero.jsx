@@ -104,7 +104,7 @@ const Hero = ({
               <div
                 data-usal="flip duration-500"
                 key={index}
-                className="bg-muted flex grow basis-0 flex-col rounded-xl p-4 relative overflow-hidden"
+                className="bg-muted dark:bg-zinc-950 flex grow basis-0 flex-col rounded-xl p-4 relative overflow-hidden"
               >
                 <div className="bg-background mb-6 flex size-10 items-center justify-center rounded-full drop-shadow-lg text-primary relative z-10">
                   {feature.icon}

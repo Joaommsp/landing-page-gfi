@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Users } from "lucide-react";
+import { Users, DatabaseZap } from "lucide-react";
 
 import user01 from "@/assets/img/section-system-infos/user-01.jpg";
 import user02 from "@/assets/img/section-system-infos/user-02.jpg";
@@ -13,7 +13,7 @@ export default function SystemInfos() {
           <div className="relative z-10 grid grid-cols-6 gap-3">
             <Card
               data-usal="fade-u delay-0 duration-800 once"
-              className="relative col-span-full flex overflow-hidden lg:col-span-2"
+              className="relative col-span-full flex overflow-hidden lg:col-span-2 dark:bg-zinc-950"
             >
               <CardContent className="relative m-auto size-fit pt-6">
                 <div className="relative flex h-24 w-56 items-center">
@@ -42,7 +42,7 @@ export default function SystemInfos() {
             </Card>
             <Card
               data-usal="fade-u delay-0 duration-1000 once"
-              className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2"
+              className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 dark:bg-zinc-950"
             >
               <CardContent className="pt-6">
                 <div className="relative mx-auto flex aspect-square size-32 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:before:border-white/5">
@@ -110,7 +110,7 @@ export default function SystemInfos() {
             </Card>
             <Card
               data-usal="fade-u delay-0 duration-1100 once"
-              className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2"
+              className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 dark:bg-zinc-950"
             >
               <CardContent className="pt-6">
                 <div className="pt-6 lg:px-6">
@@ -205,7 +205,7 @@ export default function SystemInfos() {
               <CardContent className="grid pt-6 sm:grid-cols-2">
                 <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
                   <div className="relative flex aspect-square size-12 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:before:border-white/5">
-                    <Shield className="m-auto size-5" strokeWidth={1} />
+                    <DatabaseZap className="m-auto size-5" strokeWidth={1} />
                   </div>
                   <div className="space-y-2">
                     <h2 className="group-hover:text-secondary-950 text-lg font-medium text-zinc-800 transition dark:text-white">

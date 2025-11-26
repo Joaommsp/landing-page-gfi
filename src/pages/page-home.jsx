@@ -5,6 +5,11 @@ import DashBoard from "@/components/dashboard";
 import SystemInfos from "@/components/system-infos";
 import FeaturesSection02 from "@/components/features-section-02";
 import FeaturesSection01 from "@/components/features-section-01";
+import Implementation from "@/components/implementation";
+import FAQs from "@/components/faqs";
+import { About } from "@/components/about";
+import ContactForm from "@/components/contact-form";
+import CallToAction from "@/components/call-to-action";
 
 export default function Home() {
   return (
@@ -15,6 +20,11 @@ export default function Home() {
       <SystemInfos />
       <FeaturesSection01 />
       <FeaturesSection02 />
+      <Implementation />
+      <FAQs />
+      <About />
+      <ContactForm />
+      <CallToAction />
     </div>
   );
 }

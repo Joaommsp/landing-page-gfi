@@ -11,7 +11,7 @@ export default function DashBoard() {
 
   return (
     <section data-usal="fade-u once" className="container flex flex-col gap-6">
-      <div className="mx-auto relative space-y-8 px-16 md:space-y-16 bg-white dark:bg-[#0F0E0E] rounded-lg py-16 overflow-hidden">
+      <div className="mx-auto relative space-y-8 px-16 md:space-y-16 bg-white dark:bg-[#0F0E0E] rounded-lg py-16 overflow-hidden border">
         <h2 className="relative z-10 max-w-xl text-2xl font-medium lg:text-3xl">
           Visualização de Dados: Dashboard Inteligente
         </h2>

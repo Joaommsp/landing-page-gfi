@@ -50,7 +50,7 @@ Fundo: #f9fafb;
     --destructive-foreground: 210 40% 98%; /* Branco */
 
     /* Bordas e inputs */
-    --border: 214.3 31.8% 91.4%; /* Cinza claro */
+    --border: 0 0% 80%; /* Cinza claro */
     --input: 214.3 31.8% 91.4%; /* Cinza claro */
     --ring: 221.2 83.2% 53.3%; /* Azul (focus ring) */
 
@@ -603,7 +603,7 @@ img {
 .dark {
   /* Backgrounds - Tema Escuro */
   --bg-primary: #0a0a0a; /* Preto profundo */
-  --bg-secondary: #0F0E0E; /* Preto suave */
+  --bg-secondary: #0f0e0e; /* Preto suave */
   --bg-tertiary: #0068f9; /* Cinza muito escuro */
   --bg-reverse: #ffffff; /* Branco (inverso do tema claro) */
 
@@ -628,8 +628,8 @@ img {
   /* Body */
   --bg-body-gradient: linear-gradient(
     180deg,
-    rgb(33, 36, 41) 0%,
-    rgba(16, 18, 20, 1) 100%
+    rgb(14, 15, 17) 0%,
+    rgb(11, 12, 14) 100%
   );
 }
 
@@ -842,16 +842,16 @@ body {
     }
   }
   @keyframes meteor {
-  0% {
-    transform: rotate(215deg) translateX(0);
-    opacity: 1;
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
     }
-  70% {
-    opacity: 1;
+    70% {
+      opacity: 1;
     }
-  100% {
-    transform: rotate(215deg) translateX(-500px);
-    opacity: 0;
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
     }
   }
 }
@@ -859,9 +859,9 @@ body {
 /* ====== ADDITIONAL CUSTOM STYLES ===== */
 
 .dashboard-section-background-light {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .dashboard-section-background-dark {
-  background-color: #0F0E0E;
+  background-color: #0f0e0e;
 }
