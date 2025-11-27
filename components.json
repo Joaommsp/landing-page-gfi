@@ -23,6 +23,7 @@
     "@shadcnblocks": "https://shadcnblocks.com/r/{name}.json",
     "@aceternity": "https://ui.aceternity.com/registry/{name}.json",
     "@tailark": "https://tailark.com/r/{name}.json",
-    "@magicui": "https://magicui.design/r/{name}.json"
+    "@magicui": "https://magicui.design/r/{name}.json",
+    "@ss-components": "https://shadcnstudio.com/r/{name}.json"
   }
 }

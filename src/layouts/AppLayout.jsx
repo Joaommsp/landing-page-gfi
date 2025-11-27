@@ -5,18 +5,19 @@ import { Particles } from "@/components/ui/particles";
 import { useTheme } from "@/hooks/useTheme";
 import ScrollUpButton from "@/components/scroll-up-button";
 import { USALProvider } from "@usal/react";
+import { Footer } from "@/components/footer";
 
 export default function AppLayout() {
   const { theme } = useTheme();
 
   return (
     <USALProvider>
-      <Particles
+      {/* <Particles
         className="fixed inset-0 -z-10"
         quantity={150}
         size={0.5}
         color={theme === "dark" ? "#ffffff" : "#808080"}
-      />
+      /> */}
       <Header />
       <main className="2xl:max-w-[1365px] mx-auto min-h-screen">
         <Outlet />
@@ -26,6 +27,7 @@ export default function AppLayout() {
           <ThemeToggle />
         </div>
       </main>
+      <Footer />
     </USALProvider>
   );
 }

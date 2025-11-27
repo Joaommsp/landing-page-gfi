@@ -856,6 +856,24 @@ body {
   }
 }
 
+@theme {
+  --animate-border: border 4s linear infinite;
+
+  @keyframes border {
+    to {
+      --border-angle: 360deg;
+    }
+  }
+}
+
+@supports (property(--border-angle)) {
+  @property --border-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: "<angle>";
+  }
+}
+
 /* ====== ADDITIONAL CUSTOM STYLES ===== */
 
 .dashboard-section-background-light {
