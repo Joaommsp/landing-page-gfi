@@ -13,7 +13,7 @@ export default function Implementation() {
       <div className="mx-auto space-y-8 md:space-y-16">
         <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
           <h2 className="text-balance text-4xl font-medium lg:text-5xl">
-            Processo de Implementação.
+            Processo de Implementação
           </h2>
           <p className="text-muted-foreground">
             Metodologia em 6 etapas que garante implementação rápida, segura e

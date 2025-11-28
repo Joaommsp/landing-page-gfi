@@ -102,14 +102,14 @@ export function Footer() {
               alt="GFI Consultoria Especializada"
               className="max-w-[206px]"
             />
-            <p className="max-w-sm text-balance font-mono text-muted-foreground text-sm">
-              Tecnologia e inovação para transformar a gestão pública.
+            <p className="text-balance font-mono text-black dark:text-white text-sm">
+              Tecnologia e inovação para transformar <br /> a gestão pública.
             </p>
           </div>
         </div>
         <div className="absolute inset-x-0 h-px w-full bg-border" />
-        <div className="flex max-w-4xl flex-col justify-between gap-2 py-4">
-          <p className="text-center font-light text-muted-foreground text-sm">
+        <div className="flex w-full flex-col justify-center items-center gap-2 py-4">
+          <p className="text-center font-light text-muted-foreground text-xs lg:text-sm w-full mx-auto">
             &copy; {new Date().getFullYear()} GFI Consultoria Especializada,
             todos os direitos reservados.
           </p>

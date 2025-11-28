@@ -18,8 +18,6 @@ export function Header() {
   const menuItems = [
     { name: "Soluções", href: "#solucoes" },
     { name: "Benefícios", href: "#beneficios" },
-    { name: "Como Funciona", href: "#como-funciona" },
-    { name: "Recursos", href: "#recursos" },
     { name: "Sobre", href: "#sobre" },
   ];
 
@@ -48,10 +46,10 @@ export function Header() {
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
-                <img 
-                  src={getLogo()} 
-                  alt="Logo" 
-                  className="max-w-[150px] transition-opacity hover:opacity-80" 
+                <img
+                  src={getLogo()}
+                  alt="Logo"
+                  className="max-w-[150px] transition-opacity hover:opacity-80"
                 />
               </a>
 
@@ -93,7 +91,7 @@ export function Header() {
                     <li key={index}>
                       <a
                         href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block font-medium transition-colors duration-150"
+                        className="text-muted-foreground hover:text-accent-foreground block transition-colors duration-150"
                         onClick={() => setMenuState(false)}
                       >
                         <span>{item.name}</span>

@@ -12,7 +12,7 @@ export default function FeaturesSection01() {
     <div className="relative z-20 container max-w-7xl mx-auto">
       <div className="px-8">
         <h4 className="text-3xl lg:text-4xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-          Acesso de Qualquer Lugar.
+          Acesso de Qualquer Lugar
         </h4>
 
         <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-muted-foreground text-center">

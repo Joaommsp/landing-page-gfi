@@ -29,7 +29,7 @@ const Benefits02 = ({
     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg",
     alt: "logo",
     title:
-      "Centralize todas as informações financeiras em um único sistema multiplataforma.",
+      "Centralize todas as informações financeiras em um único sistema multiplataforma",
     description:
       "Acesse dados financeiros em tempo real através de relatórios e dashboards.",
     buttonText: "Saiba mais",

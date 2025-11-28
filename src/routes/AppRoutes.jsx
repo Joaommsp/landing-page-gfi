@@ -12,7 +12,7 @@ export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<AppLayout />}>
-        <Route index element={<Navigate to={"/home"} replace />} />
+        <Route index element={<Navigate to={"/introduction"} replace />} />
         <Route path="home" element={<Home />} />
       </Route>
 
