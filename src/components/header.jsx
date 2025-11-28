@@ -16,9 +16,10 @@ export function Header() {
   };
 
   const menuItems = [
-    { name: "Soluções", href: "#solucoes" },
-    { name: "Benefícios", href: "#beneficios" },
-    { name: "Sobre", href: "#sobre" },
+    { name: "Início", href: "/" },
+    { name: "Soluções", href: "solucoes" },
+    { name: "Benefícios", href: "beneficios" },
+    { name: "Sobre", href: "sobre" },
   ];
 
   React.useEffect(() => {

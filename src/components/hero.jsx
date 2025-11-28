@@ -4,8 +4,10 @@ import {
   Zap,
   MessageSquareWarning,
   InfoIcon,
+  ArrowDown,
 } from "lucide-react";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
+import { ArrowRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
@@ -27,11 +29,11 @@ const Hero = ({
   heading = "Gestão Financeira Inteligente para Prefeituras que Buscam Transparência e Eficiência",
   description = "Otimize o controle orçamentário, reduza custos operacionais e garanta conformidade com a Lei de Responsabilidade Fiscal através de um sistema completo e integrado.",
   button = {
-    text: "Fale com um Especialista",
+    text: "Entrar em Contato",
     icon: <IconBrandWhatsapp className="ml-2 size-4" />,
     url: "https://www.shadcnblocks.com",
   },
-  trustText = "Gestão Contábil confiável",
+  trustText = "Gestão Financeira Inteligente",
   features = [
     {
       icon: <MessageSquareWarning className="h-auto w-5" />,
@@ -72,9 +74,14 @@ const Hero = ({
       <section className="container">
         <div className="overflow-hidden">
           <div className="mb-20 flex flex-col items-center gap-6 text-center">
-            <Badge data-usal="fade duration-500" variant="outline">
-              {badge}
-            </Badge>
+            <div className="rounded-lg mx-auto flex w-fit items-center gap-2 border p-1 pr-3">
+              <span className="bg-muted rounded-md px-2 py-1 text-xs">
+                Consultoria
+              </span>
+              <span className="text-sm">gfi.consultoria.com</span>
+              <span className="bg-border block h-4 w-px"></span>
+              <ArrowDown className="size-4" />
+            </div>
             <h1
               data-usal="fade duration-600"
               className="text-4xl font-semibold lg:text-5xl"

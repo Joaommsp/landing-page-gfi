@@ -7,28 +7,20 @@ import logoLight from "@/assets/img/logo-footer-light.png";
 import logoDark from "@/assets/img/logo-footer-dark.png";
 
 export function Footer() {
-  // const company = [
-  // 	{
-  // 		title: "About Us",
-  // 		href: "#",
-  // 	},
-  // 	{
-  // 		title: "Careers",
-  // 		href: "#",
-  // 	},
-  // 	{
-  // 		title: "Brand assets",
-  // 		href: "#",
-  // 	},
-  // 	{
-  // 		title: "Privacy Policy",
-  // 		href: "#",
-  // 	},
-  // 	{
-  // 		title: "Terms of Service",
-  // 		href: "#",
-  // 	},
-  // ];
+  const company = [
+    {
+      title: "Soluções",
+      href: "#",
+    },
+    {
+      title: "Benefícios",
+      href: "#",
+    },
+    {
+      title: "Sobre",
+      href: "#",
+    },
+  ];
 
   // const resources = [
   // 	{
@@ -95,8 +87,8 @@ export function Footer() {
         )}
       >
         <div className="absolute inset-x-0 h-px w-full bg-border" />
-        <div className="grid max-w-5xl grid-cols-6 gap-6 p-4">
-          <div className="col-span-6 flex flex-col gap-4 pt-5 md:col-span-4">
+        <div className="flex justify-between w-full gap-6 p-4">
+          <div className="col-span-6 flex w-full flex-col gap-4 pt-5 md:col-span-4">
             <img
               src={getLogo()}
               alt="GFI Consultoria Especializada"
@@ -106,7 +98,22 @@ export function Footer() {
               Tecnologia e inovação para transformar <br /> a gestão pública.
             </p>
           </div>
+          <div className="">
+            <span className="text-muted-foreground text-xs">GFI</span>
+            <div className="mt-2 flex flex-col gap-2">
+              {company.map(({ href, title }) => (
+                <a
+                  className="w-max text-sm hover:underline"
+                  href={href}
+                  key={title}
+                >
+                  {title}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
+
         <div className="absolute inset-x-0 h-px w-full bg-border" />
         <div className="flex w-full flex-col justify-center items-center gap-2 py-4">
           <p className="text-center font-light text-muted-foreground text-xs lg:text-sm w-full mx-auto">
