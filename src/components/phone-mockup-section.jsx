@@ -3,11 +3,14 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import phoneMockup from "@/assets/img/phone-mockup.png";
+import phoneMockupLight from "@/assets/img/phone-mockup-light.png";
+
+import { useTheme } from "@/hooks/UseTheme";
 
 const PhoneSection = ({
-  heading = "Epic Blocks",
-  subheading = " built with shadcn/ui & Tailwind",
-  description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+  heading = "Acesso Completo",
+  subheading = "  pelo Celular",
+  description = "O sistema é totalmente responsivo e acessível por navegadores web no celular, tablet ou notebook.",
   buttons = {
     primary: {
       text: "Get Started",
@@ -19,6 +22,12 @@ const PhoneSection = ({
     },
   },
 }) => {
+  const { theme } = useTheme();
+
+  const getMockup = () => {
+    return theme === "dark" ? phoneMockup : phoneMockupLight;
+  };
+
   return (
     <section className="py-16">
       <div className="container flex flex-col items-center gap-10 lg:my-0 lg:flex-row">
@@ -49,7 +58,7 @@ const PhoneSection = ({
         <div className="relative z-10">
           <img
             className="relative z-10 max-w-[300px]"
-            src={phoneMockup}
+            src={getMockup()}
             alt="iphone"
           />
         </div>
